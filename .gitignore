@@ -673,3 +673,6 @@ nbdist/
 *.css.map
 *.sass.map
 *.scss.map
+
+.env
+docker_volumes

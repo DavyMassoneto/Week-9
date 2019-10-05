@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   backend:
     build: .
@@ -7,3 +7,16 @@ services:
       - "80:3000"
     volumes:
       - ./backend:/usr/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DBUSER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DBPASSWORD}
+      MONGO_INITDB_DATABASE: ${DBNAME}
+    volumes:
+      - ./config/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
