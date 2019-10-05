@@ -9,6 +9,9 @@ mongoose.connect("mongodb://omnistack:omnistack@mongo:27017/week", {
   useUnifiedTopology: true
 })
 
+// FindOneAndUpdate is deprecated but findAndModify don't have implements.
+mongoose.set('useFindAndModify', false);
+
 app.use(express.json())
 app.use(routes)
 
