@@ -674,7 +674,8 @@ nbdist/
 *.sass.map
 *.scss.map
 
-.env
 docker_volumes
 
 uploads
+
+.expo-shared
