@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const routes = require('./routes')
 
 const app = express()
-mongoose.connect("mongodb://omnistack:omnistack@mongo:27017/week", {
+mongoose.connect('mongodb://omnistack:omnistack@mongo:27017/week-9', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
