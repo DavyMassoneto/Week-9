@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AsyncStorage } from 'react-native'
 
-import api from '../../services/api'
+import api from 'src/services/api'
 
 import { Button, ButtonText, Container, Form, Input, Label, Logo } from './styles'
 
@@ -25,14 +25,12 @@ export default function Login ({ navigation }) {
   async function handleSubmit () {
     const response = await api.post('/sessions', { email })
 
-    if (response.status === 200 && response.data) {
-      const { _id } = response.data
+    const { _id } = response
 
-      await AsyncStorage.setItem('user', _id)
-      await AsyncStorage.setItem('techs', techs)
+    await AsyncStorage.setItem('user', _id)
+    await AsyncStorage.setItem('techs', techs)
 
-      navigation.navigate('List')
-    }
+    navigation.navigate('List')
   }
 
   return (
