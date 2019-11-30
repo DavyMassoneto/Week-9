@@ -25,7 +25,7 @@ export default function Login ({ navigation }) {
   async function handleSubmit () {
     const response = await api.post('/sessions', { email })
 
-    if (response.status === 200) {
+    if (response.status === 200 && response.data) {
       const { _id } = response.data
 
       await AsyncStorage.setItem('user', _id)
