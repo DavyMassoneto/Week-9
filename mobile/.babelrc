@@ -10,10 +10,6 @@
           {
             "rootPathSuffix": "src",
             "rootPathPrefix": "src"
-          },
-          {
-            "rootPathSuffix": "config",
-            "rootPathPrefix": "config"
           }
         ]
       }
